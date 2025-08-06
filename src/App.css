@@ -1,0 +1,11 @@
+body {
+  background-color: mediumpurple;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  color: white;
+  font: 1em;
+  font-family: 'Courier New', Courier, monospace;
+}
