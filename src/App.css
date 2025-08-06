@@ -10,7 +10,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-img {
+.title img {
   border-radius: 6px;
   width: 500px;
 }
@@ -21,6 +21,14 @@ img {
   max-width: 400px;
   min-width: 250px;
   background-color: aliceblue;
+}
+
+.card-types img {
+  width: 300px;
+}
+
+.card-types {
+  text-align: center;
 }
 
 .card p {
@@ -63,5 +71,5 @@ img {
 }
 
 .footer {
-  color: #888;
+  color: #3a3535;
 }
