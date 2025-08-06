@@ -9,3 +9,59 @@ body {
   font: 1em;
   font-family: 'Courier New', Courier, monospace;
 }
+
+img {
+  border-radius: 6px;
+  width: 500px;
+}
+
+.card {
+  padding: 2em;
+  margin: auto;
+  max-width: 400px;
+  min-width: 250px;
+  background-color: aliceblue;
+}
+
+.card p {
+  text-align: center;
+}
+
+.options-card {
+  max-width: 300px;
+  margin: inherit;
+  min-width: 250px;
+  background-color: cornflowerblue;
+}
+
+.list-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-options-right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-left: right;
+
+}
+
+.list-options-right span {
+  padding-right: 10px;
+}
+
+.list-options-left {
+  display: flex;
+  align-content: flex-start;
+  flex-flow: column;
+  padding-left: 10px;
+}
+
+.list-options-left span {
+  padding-left: 10px;
+}
+
+.footer {
+  color: #888;
+}
