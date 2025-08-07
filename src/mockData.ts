@@ -2,13 +2,13 @@ import type { AtmAccountData } from "./store/type";
 
 export const bankAccounts: AtmAccountData[] = [
     {
-        accountId: 101,
+        accountId: 1011,
         balance: 100, cardType: "visa", user: "Selma Brown"
     }, {
-        accountId: 103,
+        accountId: 1023,
         balance: 100, cardType: "ms_card", user: "Daniel Jacobs"
     }, {
-        accountId: 105,
+        accountId: 1035,
         balance: 100, cardType: "pulse", user: "Abi Ojo"
     }
 ]
