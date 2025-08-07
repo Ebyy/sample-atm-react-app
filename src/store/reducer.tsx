@@ -13,18 +13,19 @@ const AccountsSlice = createSlice({
     initialState: selectedAccount,
     reducers: {
         getUserAccountTask: (state, action) => {
-            return action.payload ? action.payload : selectedAccount
+            return state = action.payload ? action.payload : selectedAccount
         },
         runWithdrawTask: (state, action) => {
             const incrementAmount = action.payload;
-            //const newState = state.find((item) => item.accountId === id)
             state.balance -= incrementAmount
         },
         runDepositTask: (state, action) => {
             const decrementAmount = action.payload;
-            //const newState = state.find((item) => item.accountId === id)
             state.balance += decrementAmount
         },
+        runExitTask: (state) =>
+            (state = { ...selectedAccount })
+
     },
     selectors: {
         checkBalance: (state) => state.balance
@@ -32,7 +33,7 @@ const AccountsSlice = createSlice({
 })
 
 export const {
-    getUserAccountTask, runDepositTask, runWithdrawTask,
+    getUserAccountTask, runDepositTask, runWithdrawTask, runExitTask
 } = AccountsSlice.actions
 
 export const {
