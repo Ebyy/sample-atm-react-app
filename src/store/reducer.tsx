@@ -5,13 +5,17 @@ const selectedAccount: AtmAccountData = {
     accountId: 0,
     user: '',
     balance: 0,
-    cardType: ''
+    cardType: '',
+    isLoggedIn: false
 }
 
 const AccountsSlice = createSlice({
-    name: "atmAccounts",
+    name: "atmAccount",
     initialState: selectedAccount,
     reducers: {
+        loginUser: (state, action) => {
+            return state = { ...action.payload, isLoggedIn: true }
+        },
         getUserAccountTask: (state, action) => {
             return state = action.payload ? action.payload : selectedAccount
         },
@@ -23,21 +27,24 @@ const AccountsSlice = createSlice({
             const decrementAmount = action.payload;
             state.balance += decrementAmount
         },
-        runExitTask: (state) =>
-            (state = { ...selectedAccount })
-
+        runExitTask: (state) => {
+            state.isLoggedIn = false
+            return state = { ...selectedAccount }
+        },
     },
     selectors: {
-        checkBalance: (state) => state.balance
+        checkBalance: (state) => state.balance,
+        getUser: (state) => state.user,
+        isValidUser: (state) => state.isLoggedIn,
     }
 })
 
 export const {
-    getUserAccountTask, runDepositTask, runWithdrawTask, runExitTask
+    getUserAccountTask, loginUser, runDepositTask, runWithdrawTask, runExitTask
 } = AccountsSlice.actions
 
 export const {
-    checkBalance,
+    checkBalance, getUser, isValidUser
 } = AccountsSlice.selectors
 
 export default AccountsSlice.reducer;
