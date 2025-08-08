@@ -1,60 +1,38 @@
 import creditCardLogo from './assets/creditcard_sprite.png'
-import { bankAccounts } from './mockData'
-import { checkBalance, getUserAccountTask, runDepositTask, runExitTask, runWithdrawTask } from './store/reducer'
-import store from './store/store'
-import { useDispatch, useSelector } from 'react-redux'
+import { getUser } from './store/reducer'
+import { useSelector } from 'react-redux'
+import sticker from './assets/sticker_graf.png'
+import { CardActionButtons } from './CardActionButtons'
 
-function Home() {
-    const bal = useSelector(checkBalance)
-    // const [isOpen, setIsOpen] = useState(0)
+const Home = () => {
+    const user = useSelector(getUser)
 
-    const dispatch = useDispatch();
-    const handlePINClick = (uniqueId: number) => {
-        const userAccount = bankAccounts.find(item => item.accountId === uniqueId)
-        console.log('prevSTATE ==> ', store.getState())
-        dispatch(getUserAccountTask(userAccount))
-
-        console.log('newSTATE ==> ', store.getState())
-    }
-    const handleBalanceClick = () => {
-        console.log('newSTATE// ==> ', store.getState())
-        console.log('balance// ==> ', bal)
-    }
-
-    const handleWithdrawalClick = (num: number) => {
-        console.log('oldSTATE// ==> ', store.getState())
-        dispatch(runWithdrawTask(num))
-        console.log('newSTATE// ==> ', store.getState())
-    }
-    const handleDepositClick = (num: number) => {
-        console.log('prevSTATE// ==> ', store.getState())
-        dispatch(runDepositTask(num))
-        console.log('newSTATE// ==> ', store.getState())
-    }
-    const handleExitClick = () => {
-        console.log('prev* ==> ', store.getState())
-        dispatch(runExitTask())
-        console.log('new* ==> ', store.getState())
-    }
     return (<>
         <div className='card-types'><img src={creditCardLogo} alt="credit card types" /></div>
+        <CardActionButtons />
         <div className='options-card'>
-            <p>Welcome, User!</p>
+            <p>Hi {user}!</p>
             <p>Please make a choice...</p>
             <div className='list-options'>
                 <div className='list-options-left'>
-                    <div><button></button><span></span></div>
-                    <div><button></button><span></span></div>
-                    <div><button onClick={() => handleWithdrawalClick(20)}></button><span>Withdraw</span> </div>
-                    <div><button onClick={() => handleDepositClick(50)}></button><span>Deposit</span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span>Withdraw</span> </div>
+                    <div><span>Deposit</span></div>
                 </div>
                 <div className='list-options-right'>
-                    <div><span></span><button></button></div>
-                    <div><span>Exit</span><button onClick={handleExitClick}></button></div>
-                    <div><span>Balance</span><button onClick={handleBalanceClick}></button></div>
-                    <div><span>PIN</span><button onClick={() => handlePINClick(1023)}></button></div>
+                    <div><span></span></div>
+                    <div><span>Exit</span></div>
+                    <div><span>Balance</span></div>
+                    <div><span>Re-Enter PIN</span></div>
                 </div>
             </div>
+            <img src={sticker} alt="cartoon sticker" /> </div>
+        <div className='footer'>
+
+            <div className="footer-text">SYSTEMS</div>
         </div>
     </>)
 }
+
+export default Home
