@@ -11,5 +11,5 @@ Actions allowed:
 2. React router used for adding Routes for better navigation
 3. Access via AccountId
 
-## Limitation
-No encryption used
+## Limitation/Out of Scope Notes
+No encryption used, Serverside functionality, testing, accessibility

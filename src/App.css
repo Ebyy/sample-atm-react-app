@@ -27,8 +27,6 @@ body {
 
 }
 
-.atm-logo {}
-
 .graffiti img {
   position: absolute;
   top: 10%;
@@ -53,7 +51,6 @@ body {
 .outer-buttons {
   display: flex;
   justify-content: space-between;
-
 }
 
 .outer-buttons div {
