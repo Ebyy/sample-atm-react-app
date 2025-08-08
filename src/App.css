@@ -142,12 +142,13 @@ body {
   display: flex;
   color: #3a3535;
   justify-content: flex-end;
-  font-weight: bold;
+  font-weight: bolder;
   padding-right: 40px;
 }
 
 .options-card img {
   height: 100px;
-  width: 90px;
+  width: 100px;
   position: absolute;
+  left: -20px;
 }
