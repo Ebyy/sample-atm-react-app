@@ -1,5 +1,7 @@
 body {
-  background-color: mediumpurple;
+  background-color: rgb(148, 131, 183);
+  margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -10,21 +12,77 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.title img {
-  border-radius: 6px;
+.content-dash {
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content img {
+  border-radius: 8px;
   width: 500px;
+
+}
+
+.atm-logo {}
+
+.graffiti img {
+  position: absolute;
+  top: 10%;
+  left: 55%;
 }
 
 .card {
   padding: 2em;
   margin: auto;
-  max-width: 400px;
-  min-width: 250px;
+  max-width: 450px;
+  min-width: 420px;
+  height: 500px;
   background-color: aliceblue;
+  border-top: 10px solid rgb(192, 189, 189);
 }
 
 .card-types img {
   width: 300px;
+  filter: blur(5px);
+}
+
+.outer-buttons {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.outer-buttons div {
+  padding: 72px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.outer-buttons button {
+  background-color: #8f8b8b;
+}
+
+.outer-buttons-left button::after {
+  border: 2px solid #8d8a8a;
+  content: '';
+  position: absolute;
+  left: 18%;
+  width: 25px;
+  height: 0;
+}
+
+.outer-buttons-right button::before {
+  border: 2px solid #8d8a8a;
+  content: '';
+  position: absolute;
+  right: 18%;
+  width: 25px;
+  height: 0;
 }
 
 .card-types {
@@ -36,10 +94,15 @@ body {
 }
 
 .options-card {
-  max-width: 300px;
+  max-width: 350px;
   margin: inherit;
-  min-width: 250px;
+  border: 5px solid rgb(214, 213, 213);
+  min-width: 280px;
   background-color: cornflowerblue;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 39%;
+  left: 24%;
 }
 
 .list-options {
@@ -52,7 +115,7 @@ body {
   align-items: flex-end;
   flex-direction: column;
   margin-left: right;
-
+  padding-right: 5px;
 }
 
 .list-options-right span {
@@ -70,6 +133,48 @@ body {
   padding-left: 10px;
 }
 
-.footer {
+.account-balance {
   color: #3a3535;
+  text-align: center;
+}
+
+.footer-text {
+  display: flex;
+  color: #3a3535;
+  justify-content: flex-end;
+  font-weight: bold;
+  padding-right: 40px;
+}
+
+.options-card img {
+  height: 100px;
+  width: 90px;
+  position: absolute;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  /* Example width */
+  height: 300px;
+  /* Example height */
+  border: 1px solid black;
+  /* For visual reference */
+  /* Position the container */
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  /* Distribute buttons outside corners */
+  justify-content: space-between;
+  /* Distribute vertically */
+  align-items: flex-start;
+  /* Align to top */
+}
+
+.container button {
+  /* Style the buttons as needed */
+  background-color: aqua;
+  padding: 10px;
+  margin: 5px;
 }
