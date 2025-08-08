@@ -27,9 +27,9 @@ const AccountsSlice = createSlice({
             const decrementAmount = action.payload;
             state.balance += decrementAmount
         },
-        runExitTask: (state) => {
-            state.isLoggedIn = false
-            return state = { ...selectedAccount }
+        runExitTask: (state, action) => {
+            state.isLoggedIn = action.payload
+            state = selectedAccount
         },
     },
     selectors: {
