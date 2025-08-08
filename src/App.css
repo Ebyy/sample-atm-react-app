@@ -47,7 +47,7 @@ body {
 
 .card-types img {
   width: 300px;
-  filter: blur(5px);
+  /* filter: blur(5px); */
 }
 
 .outer-buttons {
@@ -97,12 +97,12 @@ body {
   max-width: 350px;
   margin: inherit;
   border: 5px solid rgb(214, 213, 213);
-  min-width: 280px;
+  min-width: 290px;
   background-color: cornflowerblue;
   padding-bottom: 10px;
   position: absolute;
   top: 39%;
-  left: 24%;
+  left: 22%;
 }
 
 .list-options {
@@ -150,31 +150,4 @@ body {
   height: 100px;
   width: 90px;
   position: absolute;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  /* Example width */
-  height: 300px;
-  /* Example height */
-  border: 1px solid black;
-  /* For visual reference */
-  /* Position the container */
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  /* Distribute buttons outside corners */
-  justify-content: space-between;
-  /* Distribute vertically */
-  align-items: flex-start;
-  /* Align to top */
-}
-
-.container button {
-  /* Style the buttons as needed */
-  background-color: aqua;
-  padding: 10px;
-  margin: 5px;
 }

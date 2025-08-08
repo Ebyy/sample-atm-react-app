@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { runExitTask } from './store/reducer'
-import store from './store/store'
 import { useDispatch } from 'react-redux'
 
 export const CardActionButtons = () => {
@@ -8,9 +7,7 @@ export const CardActionButtons = () => {
     const navigate = useNavigate();
 
     const handleExitClick = () => {
-        console.log('prev* ==> ', store.getState())
         dispatch(runExitTask(false))
-        console.log('new* ==> ', store.getState())
         navigate("/auth")
     }
 

@@ -9,11 +9,6 @@ import { isValidUser } from './store/reducer'
 import { BalancePage, DepositPage, WithdrawalPage, } from './UserActions'
 
 function App() {
-  // const [accessPIN, setAccessPIN] = useState({ pin: 123, cardType: 'star' })
-  // const [isOpen, setIsOpen] = useState(0)
-
-  //Set up PIN Auth aspect; **AUTH with user PIN entry** and fetch user data
-
   const isAuthenticated = useSelector(isValidUser);
 
   return (

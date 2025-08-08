@@ -34,6 +34,7 @@ const AccountsSlice = createSlice({
     },
     selectors: {
         checkBalance: (state) => state.balance,
+        getCardType: (state) => state.cardType,
         getUser: (state) => state.user,
         isValidUser: (state) => state.isLoggedIn,
     }
@@ -44,7 +45,7 @@ export const {
 } = AccountsSlice.actions
 
 export const {
-    checkBalance, getUser, isValidUser
+    checkBalance, getCardType, getUser, isValidUser
 } = AccountsSlice.selectors
 
 export default AccountsSlice.reducer;

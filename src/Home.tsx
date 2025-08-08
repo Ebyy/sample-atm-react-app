@@ -1,14 +1,21 @@
 import creditCardLogo from './assets/creditcard_sprite.png'
-import { getUser } from './store/reducer'
+import { getCardType, getUser } from './store/reducer'
 import { useSelector } from 'react-redux'
 import sticker from './assets/sticker_graf.png'
 import { CardActionButtons } from './CardActionButtons'
+import React, { createRef, useEffect, useRef } from 'react'
 
 const Home = () => {
     const user = useSelector(getUser)
+    const clientCard = useSelector(getCardType)
+
+    const CardImageRef = useRef<HTMLImageElement>(null)
+    // useEffect(() => {
+    //     if (clientCard) { CardImageRef.current?.blur() }
+    // }, [])
 
     return (<>
-        <div className='card-types'><img src={creditCardLogo} alt="credit card types" /></div>
+        <div className='card-types'><img ref={CardImageRef} src={creditCardLogo} alt="credit card types" /></div>
         <CardActionButtons />
         <div className='options-card'>
             <p>Hi {user}!</p>
