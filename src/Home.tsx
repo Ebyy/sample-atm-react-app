@@ -2,6 +2,7 @@ import creditCardLogo from './assets/creditcard_sprite.png'
 import { getCardType, getUser } from './store/reducer'
 import { useSelector } from 'react-redux'
 import sticker from './assets/sticker_graf.png'
+import systemsLogo from "./assets/systems.png";
 import { CardActionButtons } from './CardActionButtons'
 import React, { createRef, useEffect, useRef } from 'react'
 
@@ -37,7 +38,7 @@ const Home = () => {
             <img src={sticker} alt="cartoon sticker" /> </div>
         <div className='footer'>
 
-            <div className="footer-text">SYSTEMS</div>
+            <div className="footer-text"><img src={systemsLogo} alt='Systems Logo text' /></div>
         </div>
     </>)
 }

@@ -135,12 +135,10 @@ body {
   text-align: center;
 }
 
-.footer-text {
-  display: flex;
-  color: #3a3535;
-  justify-content: flex-end;
-  font-weight: bolder;
-  padding-right: 40px;
+.footer-text img {
+  width: 60px;
+  position: relative;
+  left: 300px;
 }
 
 .options-card img {
