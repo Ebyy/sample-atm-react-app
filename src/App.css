@@ -43,11 +43,6 @@ body {
   border-top: 10px solid rgb(192, 189, 189);
 }
 
-.card-types img {
-  width: 300px;
-  /* filter: blur(5px); */
-}
-
 .outer-buttons {
   display: flex;
   justify-content: space-between;

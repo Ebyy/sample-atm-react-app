@@ -4,19 +4,22 @@ import { useSelector } from 'react-redux'
 import sticker from './assets/sticker_graf.png'
 import systemsLogo from "./assets/systems.png";
 import { CardActionButtons } from './CardActionButtons'
-import React, { createRef, useEffect, useRef } from 'react'
+import { CardTypePosition } from './store/type';
+import FocusVerticalSlice from './FocusVerticalSlice';
 
 const Home = () => {
     const user = useSelector(getUser)
-    const clientCard = useSelector(getCardType)
-
-    const CardImageRef = useRef<HTMLImageElement>(null)
-    // useEffect(() => {
-    //     if (clientCard) { CardImageRef.current?.blur() }
-    // }, [])
+    const cardType = useSelector(getCardType)
 
     return (<>
-        <div className='card-types'><img ref={CardImageRef} src={creditCardLogo} alt="credit card types" /></div>
+        <div className='card-types'>
+            <FocusVerticalSlice
+                src={creditCardLogo}
+                typeImagePosition={CardTypePosition[cardType]}
+                blurPx={10}
+                style={{ width: '300px' }}
+            />
+        </div>
         <CardActionButtons />
         <div className='options-card'>
             <p>Hi {user}!</p>
